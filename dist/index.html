@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b18" />
+    <title>Life Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-mark">L</span><span>Life<span class="brand-muted">OS</span></span></a>
+        <nav aria-label="Primary navigation">
+          <a class="nav-item active" href="#dashboard"><span>◈</span>Dashboard</a>
+          <a class="nav-item" href="#quests"><span>✓</span>Daily quests</a>
+          <a class="nav-item" href="#stats"><span>⌁</span>Attributes</a>
+          <a class="nav-item" href="#achievements"><span>✦</span>Achievements</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="avatar">S</div><div><strong>Starlight</strong><small>Level 12 explorer</small></div><button aria-label="Settings">···</button></div>
+      </aside>
+
+      <main id="dashboard">
+        <header class="topbar"><div><p class="eyebrow">TUESDAY · SEPTEMBER 16</p><h1>Good evening, Starlight <span class="wave">✦</span></h1></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="focus-button"><span>◎</span> Focus mode</button></div></header>
+
+        <section class="hero-grid">
+          <article class="level-card glass">
+            <div class="level-copy"><p class="eyebrow">CURRENT LEVEL</p><div class="level-number">12</div><p class="rank">Wayfinder <span>◆</span></p><div class="xp-row"><span>2,840 / 3,500 XP</span><strong>81%</strong></div><div class="progress"><span></span></div><p class="next-level">660 XP until <b>Level 13</b></p></div>
+            <div class="level-orbit" aria-label="Level 12 progress"><div class="orbit-inner"><strong>12</strong><span>LEVEL</span></div><em class="spark spark-a">✦</em><em class="spark spark-b">✦</em></div>
+          </article>
+          <article class="streak-card glass"><div><p class="eyebrow">CURRENT STREAK</p><div class="streak-count">14 <span>days</span></div><p>You're building a rhythm. Keep it alive.</p></div><div class="flame">♨</div><div class="week"><span class="complete">M</span><span class="complete">T</span><span class="complete">W</span><span class="complete">T</span><span class="today">F</span><span>S</span><span>S</span></div></article>
+        </section>
+
+        <section class="content-grid">
+          <article class="attributes glass" id="stats"><div class="section-heading"><div><p class="eyebrow">PERSONAL STATS</p><h2>Attributes</h2></div><button class="text-button">View history <span>→</span></button></div><div class="attribute-list">
+            <div class="attribute"><div class="attribute-label"><span class="stat-icon vitality">♥</span><b>Vitality</b><small>Body & energy</small></div><div class="bar"><span style="width:82%"></span></div><strong>82</strong></div>
+            <div class="attribute"><div class="attribute-label"><span class="stat-icon focus">⌁</span><b>Focus</b><small>Mind & craft</small></div><div class="bar"><span style="width:68%"></span></div><strong>68</strong></div>
+            <div class="attribute"><div class="attribute-label"><span class="stat-icon social">☄</span><b>Connection</b><small>People & presence</small></div><div class="bar"><span style="width:74%"></span></div><strong>74</strong></div>
+            <div class="attribute"><div class="attribute-label"><span class="stat-icon growth">↗</span><b>Growth</b><small>Learning & courage</small></div><div class="bar"><span style="width:91%"></span></div><strong>91</strong></div>
+            <div class="attribute"><div class="attribute-label"><span class="stat-icon order">◇</span><b>Order</b><small>Home & finances</small></div><div class="bar"><span style="width:59%"></span></div><strong>59</strong></div>
+          </div></article>
+          <article class="radar-card glass"><div class="section-heading"><div><p class="eyebrow">THIS WEEK</p><h2>Balance</h2></div><button class="period-button">Week ▾</button></div><div class="radar-wrap"><div class="radar"><span class="radar-shape shape-1"></span><span class="radar-shape shape-2"></span><span class="radar-shape shape-3"></span><span class="radar-data"></span><i class="r-label label-top">Growth</i><i class="r-label label-right">Vitality</i><i class="r-label label-bottom-right">Focus</i><i class="r-label label-bottom-left">Order</i><i class="r-label label-left">Connection</i></div></div></article>
+        </section>
+
+        <section class="quests glass" id="quests"><div class="section-heading"><div><p class="eyebrow">SEPTEMBER 16</p><h2>Today's quests <span class="quest-progress">2/5 complete</span></h2></div><button class="add-button" aria-label="Add a new quest">+</button></div><div class="quest-list">
+          <button class="quest done"><span class="check">✓</span><span>Morning movement</span><small>+30 XP</small></button>
+          <button class="quest done"><span class="check">✓</span><span>Read for 20 minutes</span><small>+20 XP</small></button>
+          <button class="quest"><span class="check"></span><span>Deep work: Life Dashboard</span><small>+50 XP</small></button>
+          <button class="quest"><span class="check"></span><span>Call someone you love</span><small>+25 XP</small></button>
+          <button class="quest"><span class="check"></span><span>Plan tomorrow</span><small>+15 XP</small></button>
+        </div></section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
