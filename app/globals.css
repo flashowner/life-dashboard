@@ -22,7 +22,7 @@ a { color: inherit; text-decoration: none; }
 .side-nav__item--active { background: #e8f0fc; color: #1d5fd1; }
 .side-nav__item--active span { color: #1d5fd1; }
 .profile { display: flex; align-items: center; gap: 10px; margin-top: auto; padding: 18px 8px 0; border-top: 1px solid #e5e5e8; }
-.profile__avatar { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: #e7d9c7; color: #6b4b2c; font-size: 12px; font-weight: 750; }
+.profile__avatar { display: grid; width: 38px; height: 38px; place-items: center; border: 3px solid #fff; border-radius: 50%; background: linear-gradient(145deg, #2f78df, #174cae); color: #fff; box-shadow: 0 2px 8px rgba(29,95,209,.22), 0 0 0 1px #cbdcf6; font-size: 13px; font-weight: 760; }
 .profile b, .profile span { display: block; }
 .profile b { font-size: 12px; }
 .profile div span { margin-top: 2px; color: #86868b; font-size: 11px; }
@@ -79,7 +79,7 @@ a { color: inherit; text-decoration: none; }
 .day--done { background: #e3edfc; color: #1d5fd1; }
 .day--today { outline: 2px solid #1d5fd1; outline-offset: 2px; background: #1d5fd1; color: #fff; }
 .card-header, .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-.card-header h2, .section-heading h2 { font-size: 18px; font-weight: 700; }
+.card-header h2, .section-heading h2 { font-size: 19px; font-weight: 720; }
 .attribute-list { display: grid; gap: 18px; margin-top: 27px; }
 .attribute-row { display: grid; grid-template-columns: 150px minmax(90px, 1fr) 26px; align-items: center; gap: 14px; }
 .attribute-name { display: flex; align-items: center; gap: 9px; }
@@ -94,13 +94,13 @@ a { color: inherit; text-decoration: none; }
 .insight__icon { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; border-radius: 9px; background: #deebfc; color: #1d5fd1; font-size: 17px; }
 .insight h2 { font-size: 15px; font-weight: 700; }.insight > div > p:last-child { max-width: 700px; margin: 8px 0 0; color: #6e6e73; font-size: 12px; line-height: 1.6; }
 .quests-card { padding: 26px 28px 22px; }
-.section-heading h2 span { margin-left: 8px; color: #86868b; font: 500 10px/1 ui-monospace, monospace; letter-spacing: 0; }
+.section-heading h2 span { margin-left: 10px; color: #6e6e73; font: 550 11px/1 ui-monospace, monospace; letter-spacing: 0; }
 .add-button { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 9px; color: #1d5fd1; font-size: 20px; line-height: 1; }
 .quest-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
 .quest-card { min-height: 118px; padding: 13px 12px 11px; border: 1px solid #e5e5e9; border-radius: 12px; background: #fbfbfc; color: #1d1d1f; text-align: left; transition: transform .18s, border-color .18s, background .18s; }
 .quest-card:hover { transform: translateY(-2px); border-color: #a6c2ec; background: #fff; }.quest-card--main { border-color: #b9d0f2; }.quest-card--done { background: #f4f5f7; }.quest-card--done .quest-card__title { color: #86868b; text-decoration: line-through; }.quest-card--done .check { border-color: #1d5fd1; background: #1d5fd1; color: #fff; }
-.quest-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }.kind-chip { padding: 4px 6px; border-radius: 5px; background: #f0f0f2; color: #6e6e73; font: 9px ui-monospace, monospace; }.quest-card__star { color: #1d5fd1; font-size: 12px; }
-.quest-card__title { display: flex; align-items: flex-start; gap: 7px; font-size: 12px; font-weight: 650; line-height: 1.45; }.check { display: inline-grid; width: 16px; height: 16px; flex: 0 0 auto; place-items: center; border: 1px solid #c7c7cc; border-radius: 5px; color: transparent; font-size: 11px; line-height: 1; }.quest-card small { display: block; margin: 13px 0 0 23px; color: #86868b; font: 10px ui-monospace, monospace; }.save-note { margin: 17px 0 0; color: #86868b; font-size: 11px; }
+.quest-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }.kind-chip { padding: 4px 7px; border-radius: 6px; background: #f0f0f2; color: #5e5e63; font: 600 10px ui-monospace, monospace; }.kind-chip--daily { background: #e8f0fc; color: #1d5fd1; }.kind-chip--habit { background: #eaf5ed; color: #247548; }.kind-chip--one_off { background: #f0ebfb; color: #7253b4; }.quest-card__star { color: #1d5fd1; font-size: 12px; }
+.quest-card__title { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; font-weight: 680; line-height: 1.4; }.check { display: inline-grid; width: 17px; height: 17px; flex: 0 0 auto; place-items: center; border: 1px solid #b8b8bf; border-radius: 5px; color: transparent; font-size: 11px; line-height: 1; }.quest-card small { display: block; margin: 14px 0 0 25px; color: #1d5fd1; font: 600 11px ui-monospace, monospace; }.quest-card--done small { color: #8a8a91; }.save-note { margin: 17px 0 0; color: #86868b; font-size: 11px; }
 @media (max-width: 1100px) { .dashboard { padding-right: 28px; padding-left: 28px; }.quest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 900px) { .life-layout { display: block; }.sidebar { display: none; }.dashboard { max-width: 760px; margin: 0 auto; padding: 30px 20px 48px; }.dashboard-grid--top, .dashboard-grid--mid { grid-template-columns: 1fr; }.balance-card { display: none; }.quest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .dashboard { padding: 24px 15px 40px; }.topbar { margin-bottom: 22px; }.topbar h1 { font-size: 28px; }.secondary-button { display: none; }.main-quest { align-items: flex-start; flex-direction: column; padding: 21px; }.main-quest__actions { width: 100%; justify-content: space-between; }.level-card, .streak-card, .attributes-card, .quests-card { padding: 22px 19px; }.level-card { min-height: 218px; }.level-ring { width: 112px; height: 112px; margin-left: 12px; }.level-ring > div { width: 90px; height: 90px; }.level-ring b { font-size: 28px; }.level-number { font-size: 58px; }.progress-track { width: min(230px, 53vw); }.attribute-row { grid-template-columns: 122px minmax(60px, 1fr) 24px; gap: 8px; }.attribute-name { gap: 7px; }.attribute-name small { font-size: 9px; }.quest-grid { grid-template-columns: 1fr; }.quest-card { min-height: 100px; }.insight { padding: 18px; } }

@@ -75,7 +75,7 @@ export default function Dashboard() {
             <a className="side-nav__item" href="#attributes"><span>⌁</span>Attributes</a>
             <a className="side-nav__item" href="#achievements"><span>✦</span>Achievements</a>
           </nav>
-          <div className="profile"><span className="profile__avatar">S</span><div><b>Starlight</b><span>Level {level} explorer</span></div></div>
+          <div className="profile"><span className="profile__avatar" aria-label="Starlight avatar">S</span><div><b>Starlight</b><span>Level {level} explorer</span></div></div>
         </aside>
 
         <section id="dashboard" className="dashboard">
@@ -101,7 +101,7 @@ export default function Dashboard() {
 
           <article className="insight card"><span className="insight__icon">↗</span><div><p className="overline">A SMALL INSIGHT FOR THIS WEEK</p><h2>Your focus is strong. Make room for connection.</h2><p>You&apos;ve invested most of your recent XP in Focus and Growth. Try a 10-minute Connection quest tomorrow — a message, a call, or a shared walk is enough.</p></div></article>
 
-          <article id="quests" className="card quests-card"><div className="section-heading"><div><p className="overline">SEPTEMBER 16</p><h2>Today&apos;s quests <span>{quests.filter((q) => q.done).length}/{quests.length} complete</span></h2></div><button onClick={addQuest} aria-label="Add a new quest" className="add-button">+</button></div><div className="quest-grid">{quests.map((quest) => <button key={quest.id} onClick={() => toggleQuest(quest.id)} className={`quest-card ${quest.done ? "quest-card--done" : ""} ${quest.isMainQuest ? "quest-card--main" : ""}`}><div className="quest-card__top"><span className="kind-chip">{kindLabel[quest.kind]}</span>{quest.isMainQuest && <span className="quest-card__star" title="Today's main quest">✦</span>}</div><div className="quest-card__title"><span className="check">{quest.done ? "✓" : ""}</span><span>{quest.label}</span></div><small>+{quest.xp}{quest.isMainQuest ? " + 10 main" : ""} XP</small></button>)}</div><p className="save-note">{ready ? `Today you earned ${earnedToday + (mainQuest?.done ? 10 : 0)} XP. Your progress is saved on this device.` : "Loading your saved progress…"}</p></article>
+          <article id="quests" className="card quests-card"><div className="section-heading"><div><p className="overline">SEPTEMBER 16</p><h2>Today&apos;s quests <span>{quests.filter((q) => q.done).length}/{quests.length} complete</span></h2></div><button onClick={addQuest} aria-label="Add a new quest" className="add-button">+</button></div><div className="quest-grid">{quests.map((quest) => <button key={quest.id} onClick={() => toggleQuest(quest.id)} className={`quest-card ${quest.done ? "quest-card--done" : ""} ${quest.isMainQuest ? "quest-card--main" : ""}`}><div className="quest-card__top"><span className={`kind-chip kind-chip--${quest.kind}`}>{kindLabel[quest.kind]}</span>{quest.isMainQuest && <span className="quest-card__star" title="Today's main quest">✦</span>}</div><div className="quest-card__title"><span className="check">{quest.done ? "✓" : ""}</span><span>{quest.label}</span></div><small>+{quest.xp}{quest.isMainQuest ? " + 10 main" : ""} XP</small></button>)}</div><p className="save-note">{ready ? `Today you earned ${earnedToday + (mainQuest?.done ? 10 : 0)} XP. Your progress is saved on this device.` : "Loading your saved progress…"}</p></article>
         </section>
       </div>
     </main>
