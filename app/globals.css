@@ -21,3 +21,47 @@ button { cursor: pointer; }
 .rose { color: #ffab87; background: #563547; }.cyan { color: #75dfed; background: #234957; }.violet { color: #bb9aff; background: #43345d; }.lime { color: #a7e477; background: #36513f; }.gold { color: #efc06d; background: #564a32; }
 .quest-card { min-height: 106px; border: 1px solid rgba(160,178,255,.13); border-radius: 11px; background: rgba(10,15,33,.4); padding: 13px 12px; color: #cbd1e9; transition: .2s; }.quest-card:hover { transform: translateY(-2px); border-color: #8878e8; }.quest-card.main-marked { border-color: rgba(151,131,255,.33); }.check { display: inline-grid; width: 16px; height: 16px; margin-right: 7px; place-items: center; border: 1px solid #65708f; border-radius: 5px; vertical-align: middle; color: white; font-size: 11px; }.quest-card.done { background: rgba(95,80,166,.13); }.quest-card.done .check { border-color: #8c79ed; background: #806de1; }.quest-card.done > span:nth-child(3) { color: #949bb5; text-decoration: line-through; }.quest-card.done small { color: #9587db; }.kind-chip { border-radius: 5px; background: rgba(125,141,199,.13); padding: 3px 6px; color: #9ca8ca; font: 9px ui-monospace, monospace; }
 @media (max-width: 640px) { .level-orbit { width: 118px; height: 118px; margin-right: 0; }.level-orbit b { font-size: 32px; }.level-number { font-size: 58px; } }
+
+/* Apple-inspired visual pass: quiet surfaces, system typography, and one clear accent. */
+.apple-shell { background: #f5f5f7 !important; color: #1d1d1f !important; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+.apple-shell .ambient { opacity: .32; filter: blur(120px); }
+.apple-shell .ambient-one { background: #d9e8ff; top: -300px; left: 24%; }
+.apple-shell .ambient-two { background: #d7f3eb; right: -240px; bottom: -80px; }
+.apple-shell aside { border-color: rgba(0,0,0,.08); background: rgba(255,255,255,.64); color: #1d1d1f; }
+.apple-shell aside nav { color: #6e6e73; }
+.apple-shell aside nav a { border-radius: 9px; }
+.apple-shell aside nav a:first-child { background: #e8e8ed; color: #1d1d1f; box-shadow: inset 2px 0 #0071e3; }
+.apple-shell .panel { border: 1px solid rgba(0,0,0,.08); background: rgba(255,255,255,.74); box-shadow: 0 12px 32px rgba(0,0,0,.055); backdrop-filter: blur(22px); }
+.apple-shell .main-quest { border-color: rgba(0,113,227,.2); background: linear-gradient(105deg,rgba(232,241,255,.95),rgba(255,255,255,.82)); box-shadow: 0 12px 28px rgba(0,66,140,.09); }
+.apple-shell .eyebrow { color: #86868b; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .08em; }
+.apple-shell h1,.apple-shell h2,.apple-shell b,.apple-shell strong { color: #1d1d1f; }
+.apple-shell h1 { letter-spacing: -.045em; font-weight: 700; }
+.apple-shell h2 { letter-spacing: -.025em; }
+.apple-shell .level-number { background: none; color: #1d1d1f; font-size: 64px; letter-spacing: -.07em; }
+.apple-shell .level-orbit { background: conic-gradient(#0071e3 0 81%,#e5e5ea 81% 100%); box-shadow: none; }
+.apple-shell .level-orbit::before { background: #fff; }
+.apple-shell .level-orbit span { color: #86868b; }
+.apple-shell .level-orbit b { color: #1d1d1f; }
+.apple-shell .progress,.apple-shell .bar { background: #e5e5ea; }
+.apple-shell .progress span,.apple-shell .bar span { background: #0071e3; box-shadow: none; }
+.apple-shell .next-level,.apple-shell .attribute-label small,.apple-shell .quest-card small,.apple-shell .insight p,.apple-shell .streak-card p { color: #6e6e73; }
+.apple-shell .rank { color: #6e6e73; }
+.apple-shell .rank span,.apple-shell .quest-star,.apple-shell .main-quest-link,.apple-shell .text-\[\#a99bff\] { color: #0071e3; }
+.apple-shell .focus-button,.apple-shell .icon-button,.apple-shell .period-button,.apple-shell .add-button { border-color: rgba(0,0,0,.1); background: rgba(255,255,255,.72); color: #1d1d1f; }
+.apple-shell .main-quest-action { border: 0; background: #0071e3; box-shadow: none; }
+.apple-shell .main-quest-action.completed { background: #e8e8ed; color: #1d1d1f; }
+.apple-shell .insight { border-color: rgba(0,113,227,.14); background: rgba(239,246,255,.74); }
+.apple-shell .insight-icon { background: #dcecff; color: #0071e3; }
+.apple-shell .quest-card { border-color: rgba(0,0,0,.1); background: rgba(255,255,255,.48); color: #1d1d1f; box-shadow: none; }
+.apple-shell .quest-card:hover { border-color: #0071e3; background: #fff; }
+.apple-shell .quest-card.done { background: #f1f1f3; }
+.apple-shell .quest-card.done .check { border-color: #0071e3; background: #0071e3; }
+.apple-shell .quest-card.done > span:nth-child(3) { color: #86868b; }
+.apple-shell .check { border-color: #c7c7cc; }
+.apple-shell .kind-chip { background: #f1f1f3; color: #6e6e73; }
+.apple-shell .week span { background: #e8e8ed; color: #86868b; }
+.apple-shell .week .complete { background: #dcecff; color: #0071e3; }
+.apple-shell .week .today { outline-color: #0071e3; background: #0071e3; color: #fff; }
+.apple-shell .stat-icon { filter: saturate(.65); }
+.apple-shell .wave { color: #0071e3; }
+@media (max-width: 950px) { .apple-shell aside { background: rgba(255,255,255,.82); } }

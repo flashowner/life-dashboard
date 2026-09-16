@@ -46,7 +46,7 @@ export default function Dashboard() {
   const mainQuest = quests.find((q) => q.isMainQuest) ?? quests.find((q) => !q.done) ?? quests[0];
   const kindLabel: Record<QuestKind, string> = { daily: "Daily", habit: "Habit", one_off: "One-off" };
 
-  return <main className="min-h-screen overflow-hidden bg-[#070b18] text-[#f4f6ff]">
+  return <main className="apple-shell min-h-screen overflow-hidden bg-[#f5f5f7] text-[#1d1d1f]">
     <div className="ambient ambient-one" /><div className="ambient ambient-two" />
     <div className="relative mx-auto grid min-h-screen max-w-[1540px] lg:grid-cols-[244px_minmax(0,1fr)]">
       <aside className="hidden border-r border-white/10 bg-[#060a17]/40 px-[18px] py-8 backdrop-blur-xl lg:flex lg:flex-col">
