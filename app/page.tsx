@@ -52,6 +52,14 @@ const copy = {
   },
 };
 
+function getBrowserStorage(): Storage | null {
+  try {
+    return typeof window !== "undefined" ? window.localStorage : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function Dashboard() {
   const [quests, setQuests] = useState<Quest[]>(initialQuests);
   const [locale, setLocale] = useState<Locale>("en");
@@ -59,21 +67,23 @@ export default function Dashboard() {
   const t = copy[locale];
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("life-dashboard-quests");
+    const storage = getBrowserStorage();
+    const saved = storage?.getItem("life-dashboard-quests");
     if (saved) {
       try {
         setQuests((JSON.parse(saved) as Partial<Quest>[]).map((q, index) => ({ id: q.id ?? Date.now() + index, label: q.label ?? "New quest", xp: q.xp ?? 20, done: q.done ?? false, kind: q.kind ?? "habit", isMainQuest: q.isMainQuest ?? false })));
       } catch { /* keep starter state */ }
     }
-    const savedLocale = window.localStorage.getItem("life-dashboard-locale");
+    const savedLocale = storage?.getItem("life-dashboard-locale");
     if (savedLocale === "en" || savedLocale === "zh") setLocale(savedLocale);
     setReady(true);
   }, []);
 
   useEffect(() => {
+    const storage = getBrowserStorage();
     if (ready) {
-      window.localStorage.setItem("life-dashboard-quests", JSON.stringify(quests));
-      window.localStorage.setItem("life-dashboard-locale", locale);
+      storage?.setItem("life-dashboard-quests", JSON.stringify(quests));
+      storage?.setItem("life-dashboard-locale", locale);
     }
     document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
   }, [quests, ready, locale]);
