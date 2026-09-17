@@ -40,8 +40,8 @@ a { color: inherit; text-decoration: none; }
 .side-nav__item--active span { color: var(--forest); }
 .profile { position: relative; z-index: 1; display: flex; align-items: center; gap: 11px; margin-top: auto; padding: 18px 8px 0; border-top: 1px solid rgba(255,255,255,.13); }
 .profile__avatar { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 2px solid rgba(255,255,255,.72); border-radius: 50%; background: var(--coral); color: var(--forest); box-shadow: 0 0 0 4px rgba(255,138,109,.12); font: 800 15px/1 Georgia, serif; }
-.profile b, .profile span { display: block; }
-.profile b { color: #fff; font-size: 14px; }
+.profile > div b, .profile > div span { display: block; }
+.profile > div b { color: #fff; font-size: 14px; }
 .profile div span { margin-top: 3px; color: #9ead9f; font-size: 12px; }
 
 .dashboard { width: 100%; max-width: 1220px; padding: 42px 48px 70px; }
