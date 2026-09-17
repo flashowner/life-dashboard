@@ -64,11 +64,9 @@ export default function Dashboard() {
 
   return (
     <main className="life-app min-h-screen overflow-hidden">
-      <div className="life-app__wash life-app__wash--one" />
-      <div className="life-app__wash life-app__wash--two" />
       <div className="life-layout">
         <aside className="sidebar">
-          <div className="brand"><span className="brand__mark">L</span><span>Life<span className="brand__muted">OS</span></span></div>
+          <div className="brand"><span className="brand__mark">L</span><span>Life<span className="brand__muted">Dashboard</span></span></div>
           <nav className="side-nav" aria-label="Main navigation">
             <a className="side-nav__item side-nav__item--active" href="#dashboard"><span>◈</span>Dashboard</a>
             <a className="side-nav__item" href="#quests"><span>✓</span>Daily quests</a>
@@ -96,12 +94,12 @@ export default function Dashboard() {
 
           <div className="dashboard-grid dashboard-grid--mid">
             <article id="attributes" className="card attributes-card"><CardHeader eyebrow="PERSONAL STATS" title="Attributes" action="View history →" /><div className="attribute-list">{attributes.map((stat) => <div key={stat.name} className="attribute-row"><div className="attribute-name"><span className={`stat-icon ${stat.tone}`}>{stat.icon}</span><div><b>{stat.name}</b><small>{stat.hint}</small></div></div><div className="attribute-bar"><span style={{ width: `${stat.value}%` }} /></div><strong>{stat.value}</strong></div>)}</div></article>
-            <article className="card balance-card"><CardHeader eyebrow="THIS WEEK" title="Balance" action="Week ▾" /><div className="radar-wrap"><ResponsiveContainer width="100%" height="100%"><RadarChart data={radarData} outerRadius="68%"><PolarGrid stroke="#d9d9df" /><PolarAngleAxis dataKey="attribute" tick={{ fill: "#6e6e73", fontSize: 10, fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif" }} /><Radar dataKey="value" stroke="#1d5fd1" strokeWidth={2} fill="#6a9bea" fillOpacity={0.2} /></RadarChart></ResponsiveContainer></div></article>
+            <article className="card balance-card"><CardHeader eyebrow="THIS WEEK" title="Balance" action="Week ▾" /><div className="radar-wrap"><ResponsiveContainer width="100%" height="100%"><RadarChart data={radarData} outerRadius="68%"><PolarGrid stroke="#9f8ec5" strokeOpacity={0.38} /><PolarAngleAxis dataKey="attribute" tick={{ fill: "#51476d", fontSize: 11, fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif" }} /><Radar dataKey="value" stroke="#554087" strokeWidth={2.5} fill="#7861ad" fillOpacity={0.28} /></RadarChart></ResponsiveContainer></div></article>
           </div>
 
           <article className="insight card"><span className="insight__icon">↗</span><div><p className="overline">A SMALL INSIGHT FOR THIS WEEK</p><h2>Your focus is strong. Make room for connection.</h2><p>You&apos;ve invested most of your recent XP in Focus and Growth. Try a 10-minute Connection quest tomorrow — a message, a call, or a shared walk is enough.</p></div></article>
 
-          <article id="quests" className="card quests-card"><div className="section-heading"><div><p className="overline">SEPTEMBER 16</p><h2>Today&apos;s quests <span>{quests.filter((q) => q.done).length}/{quests.length} complete</span></h2></div><button onClick={addQuest} aria-label="Add a new quest" className="add-button">+</button></div><div className="quest-grid">{quests.map((quest) => <button key={quest.id} onClick={() => toggleQuest(quest.id)} className={`quest-card ${quest.done ? "quest-card--done" : ""} ${quest.isMainQuest ? "quest-card--main" : ""}`}><div className="quest-card__top"><span className={`kind-chip kind-chip--${quest.kind}`}>{kindLabel[quest.kind]}</span>{quest.isMainQuest && <span className="quest-card__star" title="Today's main quest">✦</span>}</div><div className="quest-card__title"><span className="check">{quest.done ? "✓" : ""}</span><span>{quest.label}</span></div><small>+{quest.xp}{quest.isMainQuest ? " + 10 main" : ""} XP</small></button>)}</div><p className="save-note">{ready ? `Today you earned ${earnedToday + (mainQuest?.done ? 10 : 0)} XP. Your progress is saved on this device.` : "Loading your saved progress…"}</p></article>
+          <article id="quests" className="card quests-card"><div className="section-heading"><div><p className="overline">SEPTEMBER 16</p><h2>Today&apos;s quests <span>{quests.filter((q) => q.done).length}/{quests.length} complete</span></h2></div><button onClick={addQuest} aria-label="Add a new quest" className="add-button">+</button></div><div className="quest-grid">{quests.map((quest) => <button key={quest.id} onClick={() => toggleQuest(quest.id)} className={`quest-card quest-card--${quest.kind} ${quest.done ? "quest-card--done" : ""} ${quest.isMainQuest ? "quest-card--main" : ""}`}><div className="quest-card__top"><span className={`kind-chip kind-chip--${quest.kind}`}>{kindLabel[quest.kind]}</span>{quest.isMainQuest && <span className="quest-card__star" title="Today's main quest">✦</span>}</div><div className="quest-card__title"><span className="check">{quest.done ? "✓" : ""}</span><span>{quest.label}</span></div><small>+{quest.xp}{quest.isMainQuest ? " + 10 main" : ""} XP</small></button>)}</div><p className="save-note">{ready ? `Today you earned ${earnedToday + (mainQuest?.done ? 10 : 0)} XP. Your progress is saved on this device.` : "Loading your saved progress…"}</p></article>
         </section>
       </div>
     </main>
